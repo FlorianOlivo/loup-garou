@@ -41,6 +41,43 @@ En utilisant overrides
 - A quoi vous fait penser `withStyle` ? Comment l'utiliser ?
 withAutorization. En le précisant dans un import{} et en le précisant lors de notre export d'application
 - Reproduire les deux boutons rouge et bleu présentées dans la vidéo.
+import React from 'react';
+import './App.css';
+
+import { MuiThemeProvider, createMuiTheme, withStyles } from "@material-ui/core/";
+
+import Button from '@material-ui/core/Button';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <MuiThemeProvider theme={theme}>
+          <Button>Rouge</Button>
+          <Button className={this.props.classes.blueButton}>Blue</Button>
+        </MuiThemeProvider>
+      </div>
+    );
+  }
+}
+
+const styles = {
+  blueButton: {
+    backgroundColor: 'blue'
+  }
+}
+
+const theme = createMuiTheme({
+  overrides: {
+    MuiButton: {
+      root: {
+        backgroundColor: 'red'
+      }
+    }
+  }
+})
+
+export default withStyles(styles)(App);
 
 
 
