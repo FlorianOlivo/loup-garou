@@ -88,11 +88,17 @@ De la même manière, voici une [vidéo](https://www.youtube.com/watch?v=mS0UKNB
 Quelques petites questions :
 
 - Qu'est-ce que le CSS-in-JS ?
+
 - Qu'est-ce que sont les tagged templates (délimitées par des backticks) ?
+
 - Donner un exemple d'un bouton personnalisé avec et sans les tagged templates ?
+
 - Comment utilise-t-on les props dans cette librarie ?
+
 - Reprendre l'exemple du Material UI avec styled-components; l'écrire avec la composition et avec l'héritage.
+
 - Quelles sont les fonctions du contexte de styled-components ?
+
 
 
 ## Mise en place du design
