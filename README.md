@@ -22,13 +22,26 @@ Je vous invite à regarder la vidéo de [Human Talks Paris](https://www.youtube.
 Quelques petites questions :
 
 - Résumer en une phrase l'intérêt de Material UI
+Un UI Kit qui inclut des composants pour designer son appli web
+
 - Comment importer `material-ui` dans un fichier ?
+import ... from '@material-ui/...'
+
 - Comment une application peut utiliser un thème à travers l'ensemble d'un projet ?
+En utilisant le MuiThemeProvider
+
 - A quoi sert `createMuiTheme` ?
+Permet de personnaliser une partie des compostants de Material UI
+
 - A quoi correspond `palette` ?
+Aux palettes de couleurs de l'application. On peut par ce biais modifider les couleurs primaires, secondaires, etc de MaterialUI
+
 - Comment re-définir des propriétés ?
+En utilisant overrides
 - A quoi vous fait penser `withStyle` ? Comment l'utiliser ?
+withAutorization. En le précisant dans un import{} et en le précisant lors de notre export d'application
 - Reproduire les deux boutons rouge et bleu présentées dans la vidéo.
+
 
 
 ## Styled Components
