@@ -87,7 +87,7 @@ De la même manière, voici une [vidéo](https://www.youtube.com/watch?v=mS0UKNB
 
 Quelques petites questions :
 
-- Qu'est-ce que le CSS-in-JS ?
+- Qu'est-ce que le CSS-in-JS ? Une façon de styler des éléments en utilisants du JS afin de simuler du CSS et d'avoir des composants à un niveau facilement maintenable
 
 - Qu'est-ce que sont les tagged templates (délimitées par des backticks) ?
 
