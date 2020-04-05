@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
-import Button from '../components/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import { Paper } from '@material-ui/core';
 import { useMasterGame, addPlayer } from '../services/MasterGame';
+import Typography from '@material-ui/core/Typography';
+import StyledButton from '../components/StyledButton';
 
 
 const AddPlayerForm = () => {
@@ -30,13 +33,35 @@ const AddPlayerForm = () => {
   );
 };
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    margin: 'auto',
+    marginTop: '5em',
+    width: '40vw',
+    padding: '2em'
+  },
+  input: {
+    marginBottom: '2em'
+  },
+  button: {
+    margin: 0
+  },
+  margin: {
+    margin: theme.spacing(1),
+  },
+}));
+
 const CreatePage = (props) => {
   const { game } = useMasterGame();
   const players = game.players || [];
+  const classes = useStyles();
 
   return (
-    <div>
-      <h1>Vos amis peuvent se connecter avec le code {game.code}</h1>
+    <Paper className={classes.root}>
+      <h1>Vos amis peuvent se connecter avec le code</h1>
+      <Typography variant="h1" component="h2">
+        {game.code}
+      </Typography>
       <div>
         {players.map((player, index) => (
           <div key={index}>
@@ -45,9 +70,9 @@ const CreatePage = (props) => {
         ))}
       </div>
       <Link to="/night">
-          <Button>Démarrer la partie</Button>
+          <StyledButton>Démarrer la partie</StyledButton>
       </Link>
-    </div>
+    </Paper>
   );
 };
 

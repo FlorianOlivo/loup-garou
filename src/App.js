@@ -1,4 +1,4 @@
-import React from 'react';
+   import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import StartPage from './pages/StartPage'
 import EndPage from './pages/EndPage'
@@ -10,20 +10,28 @@ import CastPage from './pages/CastPage'
 import AlivePage from './pages/AlivePage'
 import SpellPage from './pages/SpellPage'
 import DeadPage from './pages/DeadPage'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import { MasterGameProvider } from './services/MasterGame';
 import { GameProvider } from './services/Game';
 import { UserProvider } from './services/User';
 
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import PinterestIcon from '@material-ui/icons/Pinterest';
+import RedditIcon from '@material-ui/icons/Reddit';
 
 function App() {
   return (
     <BrowserRouter>
     <UserProvider>
+      <main style={{minHeight: '80vh'}}>
+      <Header/>
       <Route exact path="/" component={ StartPage } />
       <Route path="/end" component={ EndPage } />
       <Route path="/join" component={ CodePage } />
-
-      <MasterGameProvider>
+       <MasterGameProvider>
         <Route path="/create" component={ CreatePage } />
         <Route path="/night" component={ NightPage } />
         <Route path="/vote/results" component={ ResultsPage } />
@@ -35,7 +43,15 @@ function App() {
         <Route path="/dead" component={ DeadPage } />
         <Route path="/spell" component={ SpellPage } />
       </GameProvider>
+      </main>
     </UserProvider>
+    <Footer>
+      <FacebookIcon/>
+      <InstagramIcon/>
+      <LinkedInIcon/>
+      <PinterestIcon/>
+      <RedditIcon/>
+    </Footer>
     </BrowserRouter>
   );
 }
