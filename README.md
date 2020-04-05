@@ -41,6 +41,43 @@ En utilisant overrides
 - A quoi vous fait penser `withStyle` ? Comment l'utiliser ?
 withAutorization. En le précisant dans un import{} et en le précisant lors de notre export d'application
 - Reproduire les deux boutons rouge et bleu présentées dans la vidéo.
+import React from 'react';
+import './App.css';
+
+import { MuiThemeProvider, createMuiTheme, withStyles } from "@material-ui/core/";
+
+import Button from '@material-ui/core/Button';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <MuiThemeProvider theme={theme}>
+          <Button>Rouge</Button>
+          <Button className={this.props.classes.blueButton}>Blue</Button>
+        </MuiThemeProvider>
+      </div>
+    );
+  }
+}
+
+const styles = {
+  blueButton: {
+    backgroundColor: 'blue'
+  }
+}
+
+const theme = createMuiTheme({
+  overrides: {
+    MuiButton: {
+      root: {
+        backgroundColor: 'red'
+      }
+    }
+  }
+})
+
+export default withStyles(styles)(App);
 
 
 
@@ -51,11 +88,17 @@ De la même manière, voici une [vidéo](https://www.youtube.com/watch?v=mS0UKNB
 Quelques petites questions :
 
 - Qu'est-ce que le CSS-in-JS ?
+
 - Qu'est-ce que sont les tagged templates (délimitées par des backticks) ?
+
 - Donner un exemple d'un bouton personnalisé avec et sans les tagged templates ?
+
 - Comment utilise-t-on les props dans cette librarie ?
+
 - Reprendre l'exemple du Material UI avec styled-components; l'écrire avec la composition et avec l'héritage.
+
 - Quelles sont les fonctions du contexte de styled-components ?
+
 
 
 ## Mise en place du design
